@@ -7,6 +7,10 @@
 
 class Stats {
 public:
+    Stats() = default;
+    Stats(Stats&& other) noexcept;
+    Stats& operator=(Stats&& other) noexcept;
+
     void record(std::chrono::nanoseconds latency);
     void merge(const Stats& other);
     size_t count() const;
