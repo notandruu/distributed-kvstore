@@ -1,0 +1,16 @@
+node_id: node1
+host: 127.0.0.1
+port: 7001
+role: primary
+thread_pool_size: 4
+data_dir: ./data/node1
+wal_filename: wal.bin
+replication_mode: async
+heartbeat_interval_ms: 1000
+replication_timeout_ms: 5000
+log_level: info
+replicas:
+  - host: 127.0.0.1
+    port: 7002
+  - host: 127.0.0.1
+    port: 7003
