@@ -71,7 +71,7 @@ bool ReplicationManager::replicate_write(OpCode op, const std::string& key,
     return any_success || replicas_.empty();
 }
 
-bool ReplicationManager::send_to_replica(ReplicaState& replica, OpCode op,
+bool ReplicationManager::send_to_replica(ReplicaState& replica, OpCode /*op*/,
                                           const std::string& key, const std::string& value,
                                           uint64_t wal_seq) {
     Request req;
