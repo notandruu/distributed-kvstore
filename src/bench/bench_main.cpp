@@ -54,6 +54,12 @@ int main(int argc, char* argv[]) {
               << "  value-size:  " << config.value_size << "\n\n";
 
     LoadGenerator gen(config);
-    gen.run();
+    Stats results = gen.run();
+
+    if (results.count() == 0) {
+        std::cerr << "No operations completed. Is the server running?\n";
+        return 1;
+    }
+
     return 0;
 }
